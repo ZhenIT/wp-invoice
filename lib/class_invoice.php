@@ -534,16 +534,16 @@ class WPI_Invoice {
     //** Services itemized list */
     if(isset($this->data['itemized_list']) && is_array($this->data['itemized_list'])) {
       foreach ($this->data['itemized_list'] as $key => $value) {
-        if ( $value['line_total_tax'] > 0 ) {
+        //if ( $value['line_total_tax'] > 0 ) {
           $taxable_subtotal     += $value['line_total_before_tax'];
           $tax_percents[]       =  array(
               'tax' => $value['tax_rate'],
               'qty' => $value['quantity'],
               'prc' => $value['price']
           );
-        } else {
+        /*} else {
           $non_taxable_subtotal += $value['line_total_before_tax'];
-        }
+        }*/
       }
     }
 
